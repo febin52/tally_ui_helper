@@ -1,13 +1,30 @@
+/// Represents a Tally Voucher (Transaction)
 class Voucher {
+  /// Unique identifier of the voucher
   final String guid;
+
+  /// The voucher number/ID
   final String voucherNumber;
+
+  /// Date of the voucher transaction
   final String date;
+
+  /// Type of voucher (e.g., Sales, Purchase, Receipt)
   final String voucherType;
+
+  /// Name of the primary party ledger involved
   final String partyLedgerName;
+
+  /// Total amount of the voucher
   final double amount;
+
+  /// Narration or description of the transaction
   final String narration;
+
+  /// List of individual ledger entries in this voucher
   final List<VoucherLedgerEntry> ledgerEntries;
 
+  /// Creates a [Voucher] instance
   Voucher({
     required this.guid,
     required this.voucherNumber,
@@ -19,6 +36,7 @@ class Voucher {
     this.ledgerEntries = const [],
   });
 
+  /// Parses a Tally XML Map to create a [Voucher]
   factory Voucher.fromXmlMap(Map<String, String> map) {
     double parseDouble(String key) {
       final value = map[key] ?? '0';

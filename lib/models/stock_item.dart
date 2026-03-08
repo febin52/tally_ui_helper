@@ -1,15 +1,36 @@
+/// Represents a Stock Item in Tally inventory
 class StockItem {
+  /// Unique identifier of the stock item
   final String guid;
+
+  /// Name of the stock item
   final String name;
+
+  /// Parent stock group
   final String parent;
+
+  /// Base units of measure (e.g., Nos, Kgs)
   final String baseUnits;
+
+  /// Standard cost of the item
   final double standardCost;
+
+  /// Standard selling price of the item
   final double standardPrice;
+
+  /// Closing balance quantity
   final double closingBalance;
+
+  /// Closing balance value
   final double closingValue;
+
+  /// Opening balance quantity
   final double openingBalance;
+
+  /// Opening balance value
   final double openingValue;
 
+  /// Creates a [StockItem] instance
   StockItem({
     required this.guid,
     required this.name,
@@ -23,6 +44,7 @@ class StockItem {
     required this.openingValue,
   });
 
+  /// Creates a [StockItem] from an XML map
   factory StockItem.fromXmlMap(Map<String, String> map) {
     double parseDouble(String key) {
       final value = map[key] ?? '0';
@@ -44,6 +66,7 @@ class StockItem {
     );
   }
 
+  /// Converts the stock item into a JSON map
   Map<String, dynamic> toJson() => {
         'guid': guid,
         'name': name,

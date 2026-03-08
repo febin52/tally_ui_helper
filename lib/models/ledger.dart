@@ -1,13 +1,30 @@
+/// Represents a Ledger account in Tally
 class Ledger {
+  /// Unique identifier of the ledger
   final String guid;
+
+  /// Name of the ledger
   final String name;
+
+  /// Parent group of the ledger (e.g., Sundry Debtors)
   final String parent;
+
+  /// Final closing balance of the ledger
   final double closingBalance;
+
+  /// Currency of the balance
   final String currency;
+
+  /// Primary address of the party
   final String address;
+
+  /// Tax / GST registration number
   final String taxNumber;
+
+  /// Email address of the party
   final String email;
 
+  /// Creates a new [Ledger] instance
   Ledger({
     required this.guid,
     required this.name,
@@ -19,6 +36,7 @@ class Ledger {
     required this.email,
   });
 
+  /// Parses a Tally XML Map to create a [Ledger].
   factory Ledger.fromXmlMap(Map<String, String> map) {
     String balanceString = map['CLOSINGBALANCE'] ?? '0';
     // Tally negative means debit, positive means credit.
@@ -46,6 +64,7 @@ class Ledger {
     );
   }
 
+  /// Converts the ledger into a JSON map
   Map<String, dynamic> toJson() => {
         'guid': guid,
         'name': name,
