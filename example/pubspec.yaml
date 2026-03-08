@@ -1,0 +1,21 @@
+name: flutter_tally_erp_example
+description: "Demonstrates how to use the flutter_tally_erp plugin."
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+  flutter: ">=3.13.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_tally_erp:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
