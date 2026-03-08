@@ -6,10 +6,16 @@ import 'modules/inventory_module.dart';
 import 'modules/ledger_module.dart';
 import 'modules/sales_module.dart';
 
+/// Main class to build a full ERP Application UI based on Tally data.
 class TallyERP {
+  /// Internal [TallyClient] instance used by the ERP.
   final TallyClient client;
+
+  /// Internal [TallySyncEngine] used for background synchronization.
   final TallySyncEngine? syncEngine;
 
+  /// Creates a [TallyERP] instance.
+  /// Provide the [host] of your Tally ERP 9 / Tally Prime server.
   TallyERP({
     required String host,
     Duration syncInterval = const Duration(minutes: 5),

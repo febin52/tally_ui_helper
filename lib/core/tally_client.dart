@@ -3,10 +3,15 @@ import 'package:http/http.dart' as http;
 import 'xml_builder.dart';
 import 'xml_parser.dart';
 
+/// The primary client for communicating with a Tally ERP 9 or Tally Prime server.
 class TallyClient {
+  /// The Tally server address (e.g., http://192.168.1.10:9000).
   final String host;
+
+  /// Timeout duration for the HTTP requests in seconds.
   final int timeoutSeconds;
 
+  /// Creates a [TallyClient] pointing to the specified [host].
   TallyClient({
     required this.host,
     this.timeoutSeconds = 30,
