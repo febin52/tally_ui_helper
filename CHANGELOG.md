@@ -1,3 +1,7 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+* Initial release.
+* Added `TallyClient` for HTTP XML communication.
+* Added `TallySyncEngine` for background syncing.
+* Included core business models: `Company`, `Ledger`, `Voucher`, `StockItem`.
+* Auto-generated ERP User Interface components (`TallyERP.generateApp()`).
